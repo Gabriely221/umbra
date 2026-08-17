@@ -1,0 +1,499 @@
+@import url("https://fonts.googleapis.com/css2?family=Oswald:wght@300;400;500;600;700&family=Inter:wght@300;400;500;600;700&family=Abril+Fatface&family=Shadows+Into+Light&display=swap");
+
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+
+/* ============================================================
+   VARIÁVEIS GLOBAIS
+   ============================================================ */
+
+@layer base {
+
+  :root {
+
+    --background: 0 0% 4%;
+    --foreground: 0 0% 95%;
+
+    --card: 0 0% 7%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 0 0% 7%;
+    --popover-foreground: 0 0% 95%;
+
+    --primary: 0 0% 100%;
+    --primary-foreground: 0 0% 4%;
+
+    --secondary: 0 0% 12%;
+    --secondary-foreground: 0 0% 90%;
+
+    --muted: 0 0% 12%;
+    --muted-foreground: 0 0% 55%;
+
+    --accent: 0 0% 15%;
+    --accent-foreground: 0 0% 95%;
+
+    --destructive: 0 80% 55%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 16%;
+    --input: 0 0% 16%;
+    --ring: 0 0% 100%;
+
+    --chart-1: 0 0% 100%;
+    --chart-2: 0 0% 70%;
+    --chart-3: 0 0% 50%;
+    --chart-4: 0 0% 35%;
+    --chart-5: 0 0% 20%;
+
+    --radius: 0.5rem;
+
+    --sidebar-background: 0 0% 5%;
+    --sidebar-foreground: 0 0% 90%;
+
+    --sidebar-primary: 0 0% 100%;
+    --sidebar-primary-foreground: 0 0% 4%;
+
+    --sidebar-accent: 0 0% 12%;
+    --sidebar-accent-foreground: 0 0% 95%;
+
+    --sidebar-border: 0 0% 16%;
+    --sidebar-ring: 0 0% 100%;
+
+    --font-heading: "Oswald", sans-serif;
+    --font-body: "Inter", sans-serif;
+    --font-display: "Abril Fatface", serif;
+    --font-handwriting: "Shadows Into Light", cursive;
+
+  }
+
+
+  .dark {
+
+    --background: 0 0% 4%;
+    --foreground: 0 0% 95%;
+
+    --card: 0 0% 7%;
+    --card-foreground: 0 0% 95%;
+
+    --popover: 0 0% 7%;
+    --popover-foreground: 0 0% 95%;
+
+    --primary: 0 0% 100%;
+    --primary-foreground: 0 0% 4%;
+
+    --secondary: 0 0% 12%;
+    --secondary-foreground: 0 0% 90%;
+
+    --muted: 0 0% 12%;
+    --muted-foreground: 0 0% 55%;
+
+    --accent: 0 0% 15%;
+    --accent-foreground: 0 0% 95%;
+
+    --destructive: 0 80% 55%;
+    --destructive-foreground: 0 0% 98%;
+
+    --border: 0 0% 16%;
+    --input: 0 0% 16%;
+    --ring: 0 0% 100%;
+
+    --chart-1: 0 0% 100%;
+    --chart-2: 0 0% 70%;
+    --chart-3: 0 0% 50%;
+    --chart-4: 0 0% 35%;
+    --chart-5: 0 0% 20%;
+
+    --sidebar-background: 0 0% 5%;
+    --sidebar-foreground: 0 0% 90%;
+
+    --sidebar-primary: 0 0% 100%;
+    --sidebar-primary-foreground: 0 0% 4%;
+
+    --sidebar-accent: 0 0% 12%;
+    --sidebar-accent-foreground: 0 0% 95%;
+
+    --sidebar-border: 0 0% 16%;
+    --sidebar-ring: 0 0% 100%;
+
+  }
+
+}
+
+
+/* ============================================================
+   BASE
+   ============================================================ */
+
+@layer base {
+
+  * {
+    @apply border-border;
+  }
+
+
+  html {
+    background:
+      hsl(var(--background));
+
+    color:
+      hsl(var(--foreground));
+
+    scroll-behavior:
+      smooth;
+  }
+
+
+  body {
+
+    @apply bg-background text-foreground font-body;
+
+    margin:
+      0;
+
+    min-width:
+      320px;
+
+    min-height:
+      100vh;
+
+    font-family:
+      var(--font-body);
+
+    -webkit-font-smoothing:
+      antialiased;
+
+    -moz-osx-font-smoothing:
+      grayscale;
+
+  }
+
+
+  #root {
+
+    width:
+      100%;
+
+    min-height:
+      100vh;
+
+  }
+
+
+  button,
+  input,
+  textarea,
+  select {
+
+    font:
+      inherit;
+
+  }
+
+
+  button {
+
+    cursor:
+      pointer;
+
+  }
+
+
+  button:disabled {
+
+    cursor:
+      not-allowed;
+
+  }
+
+
+  ::selection {
+
+    background:
+      hsl(var(--primary));
+
+    color:
+      hsl(var(--primary-foreground));
+
+  }
+
+}
+
+
+/* ============================================================
+   STORY / RICH TEXT
+   ============================================================ */
+
+@layer components {
+
+  .story-content {
+
+    @apply text-sm text-muted-foreground leading-relaxed;
+
+  }
+
+
+  .story-content h1 {
+
+    @apply font-heading text-xl font-bold text-primary mb-3;
+
+  }
+
+
+  .story-content h2 {
+
+    @apply font-heading text-lg font-bold text-primary mb-2;
+
+  }
+
+
+  .story-content h3 {
+
+    @apply font-heading text-base font-bold text-primary mb-2;
+
+  }
+
+
+  .story-content p {
+
+    @apply mb-3;
+
+  }
+
+
+  .story-content ul {
+
+    @apply list-disc ml-5 mb-3;
+
+  }
+
+
+  .story-content ol {
+
+    @apply list-decimal ml-5 mb-3;
+
+  }
+
+
+  .story-content li {
+
+    @apply mb-1;
+
+  }
+
+
+  .story-content blockquote {
+
+    @apply border-l-2 border-primary/30 pl-4 italic text-muted-foreground my-3;
+
+    opacity:
+      0.8;
+
+  }
+
+
+  .story-content a {
+
+    @apply text-primary underline;
+
+  }
+
+
+  .story-content strong {
+
+    @apply font-semibold text-foreground;
+
+  }
+
+
+  .story-content img {
+
+    @apply max-w-full rounded-lg;
+
+  }
+
+}
+
+
+/* ============================================================
+   REACT QUILL
+   ============================================================ */
+
+@layer components {
+
+  .ql-toolbar.ql-snow {
+
+    border-color:
+      hsl(var(--border));
+
+    background:
+      hsl(var(--card));
+
+    border-radius:
+      0.375rem 0.375rem 0 0;
+
+  }
+
+
+  .ql-container.ql-snow {
+
+    border-color:
+      hsl(var(--border));
+
+    background:
+      hsl(var(--background));
+
+    color:
+      hsl(var(--foreground));
+
+    border-radius:
+      0 0 0.375rem 0.375rem;
+
+  }
+
+
+  .ql-editor {
+
+    color:
+      hsl(var(--foreground));
+
+    min-height:
+      140px;
+
+    font-family:
+      var(--font-body);
+
+  }
+
+
+  .ql-editor.ql-blank::before {
+
+    color:
+      hsl(var(--muted-foreground));
+
+    font-style:
+      normal;
+
+  }
+
+
+  .ql-snow .ql-stroke {
+
+    stroke:
+      hsl(var(--muted-foreground));
+
+  }
+
+
+  .ql-snow .ql-fill {
+
+    fill:
+      hsl(var(--muted-foreground));
+
+  }
+
+
+  .ql-snow .ql-picker {
+
+    color:
+      hsl(var(--muted-foreground));
+
+  }
+
+
+  .ql-snow .ql-picker-label {
+
+    color:
+      hsl(var(--muted-foreground));
+
+  }
+
+
+  .ql-snow button:hover .ql-stroke,
+  .ql-snow button.ql-active .ql-stroke {
+
+    stroke:
+      hsl(var(--primary));
+
+  }
+
+
+  .ql-snow button:hover .ql-fill,
+  .ql-snow button.ql-active .ql-fill {
+
+    fill:
+      hsl(var(--primary));
+
+  }
+
+
+  .ql-snow .ql-picker-options {
+
+    background:
+      hsl(var(--card));
+
+    border-color:
+      hsl(var(--border));
+
+  }
+
+}
+
+
+/* ============================================================
+   SCROLLBAR
+   ============================================================ */
+
+@layer utilities {
+
+  * {
+
+    scrollbar-width:
+      thin;
+
+    scrollbar-color:
+      hsl(var(--border))
+      hsl(var(--background));
+
+  }
+
+
+  *::-webkit-scrollbar {
+
+    width:
+      8px;
+
+    height:
+      8px;
+
+  }
+
+
+  *::-webkit-scrollbar-track {
+
+    background:
+      hsl(var(--background));
+
+  }
+
+
+  *::-webkit-scrollbar-thumb {
+
+    background:
+      hsl(var(--border));
+
+    border-radius:
+      9999px;
+
+  }
+
+
+  *::-webkit-scrollbar-thumb:hover {
+
+    background:
+      hsl(var(--muted-foreground));
+
+  }
+
+}
