@@ -1850,99 +1850,6 @@ export async function deleteOrganizationNegotiation(
 
 
 // ============================================================
-// REGRAS
-// ============================================================
-
-export async function getRules() {
-
-  const response =
-    await request(
-      "/rules"
-    );
-
-
-  return (
-    response?.rules ||
-    response ||
-    []
-  );
-
-}
-
-
-export async function createRule(
-  data
-) {
-
-  return request(
-    "/rules",
-    {
-      method:
-        "POST",
-
-      body:
-        JSON.stringify(
-          data
-        ),
-    }
-  );
-
-}
-
-
-export async function updateRule(
-  id,
-  data
-) {
-
-  requireId(
-    id,
-    "ID da regra"
-  );
-
-
-  return request(
-    `/rules/${encodeURIComponent(
-      id
-    )}`,
-    {
-      method:
-        "PUT",
-
-      body:
-        JSON.stringify(
-          data
-        ),
-    }
-  );
-
-}
-
-
-export async function deleteRule(
-  id
-) {
-
-  requireId(
-    id,
-    "ID da regra"
-  );
-
-
-  return request(
-    `/rules/${encodeURIComponent(
-      id
-    )}`,
-    {
-      method:
-        "DELETE",
-    }
-  );
-
-}
-
-
-// ============================================================
 // EXPORT DEFAULT
 // ============================================================
 
@@ -2069,16 +1976,6 @@ const api = {
   createOrganizationNegotiation,
   updateOrganizationNegotiation,
   deleteOrganizationNegotiation,
-
-
-  // ----------------------------------------------------------
-  // REGRAS
-  // ----------------------------------------------------------
-
-  getRules,
-  createRule,
-  updateRule,
-  deleteRule,
 
 };
 

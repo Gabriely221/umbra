@@ -339,34 +339,6 @@ const permissionsData = [
 
 
   // ----------------------------------------------------------
-  // REGRAS
-  // ----------------------------------------------------------
-
-  {
-    nome:
-      "Visualizar regras",
-
-    slug:
-      "visualizar_regras",
-
-    descricao:
-      "Permite visualizar regras.",
-  },
-
-
-  {
-    nome:
-      "Gerenciar regras",
-
-    slug:
-      "gerenciar_regras",
-
-    descricao:
-      "Permite criar, editar e remover regras.",
-  },
-
-
-  // ----------------------------------------------------------
   // USUÁRIOS
   // ----------------------------------------------------------
 
@@ -502,7 +474,7 @@ async function seedPermissions() {
 //
 // Backfill para instalações existentes.
 //
-// Exemplo antigo:
+// Exemplo:
 //
 // Usuario {
 //   id: 15
@@ -612,7 +584,7 @@ async function ensureMembrosForAllUsers() {
 
 
     // --------------------------------------------------------
-    // GARANTE ARRAY VÁLIDO EM DADOS ANTIGOS
+    // GARANTE ARRAY VÁLIDO
     // --------------------------------------------------------
 
     if (
@@ -955,9 +927,6 @@ async function seedSystem() {
     // Galeria
     permissions.visualizar_galeria,
 
-    // Regras
-    permissions.visualizar_regras,
-
   ]);
 
 
@@ -1014,9 +983,6 @@ async function seedSystem() {
     // Relações
     permissions.visualizar_relacoes,
     permissions.gerenciar_relacoes,
-
-    // Regras
-    permissions.visualizar_regras,
 
   ]);
 
@@ -1216,10 +1182,6 @@ async function seedSystem() {
 
   // ==========================================================
   // CATÁLOGO DE DEPARTAMENTOS
-  // ==========================================================
-  //
-  // Executamos depois do backfill.
-  //
   // ==========================================================
 
   await seedDepartmentsFromMembers();

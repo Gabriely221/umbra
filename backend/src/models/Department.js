@@ -21,7 +21,7 @@
 // - filtros
 // - administração
 // - validação
-// - restrições futuras em Links / Rules / Organizations
+// - restrições futuras em Links / Organizations
 //
 // ============================================================
 

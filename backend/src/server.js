@@ -77,9 +77,6 @@ const galleryRoutes =
 const organizationRoutes =
   require("./routes/organizationRoutes");
 
-const ruleRoutes =
-  require("./routes/ruleRoutes");
-
 const homeRoutes =
   require("./routes/homeRoutes");
 
@@ -192,15 +189,9 @@ app.use(
 //
 // http://localhost:3000/uploads/gallery/foto.jpg
 //
-// IMPORTANTE:
-//
-// Mantemos o mesmo caminho físico que já existia no projeto:
+// Caminho físico:
 //
 // path.join(__dirname, "../uploads")
-//
-// A localização será conferida futuramente junto com o
-// uploadMiddleware para não alterar o fluxo de uploads
-// acidentalmente.
 //
 // ============================================================
 
@@ -412,25 +403,6 @@ app.use(
 
 
 // ============================================================
-// ROTAS DE REGRAS
-// ============================================================
-//
-// Base:
-//
-// /api/rules
-//
-// ============================================================
-
-app.use(
-
-  "/api/rules",
-
-  ruleRoutes
-
-);
-
-
-// ============================================================
 // TRATAMENTO GLOBAL DE ERROS
 // ============================================================
 //
@@ -521,20 +493,15 @@ async function startServer() {
     // SINCRONIZAÇÃO DOS MODELS
     // ========================================================
     //
-    // Durante desenvolvimento ainda utilizamos alter: true.
-    //
-    // IMPORTANTE:
-    //
-    // Isso será revisto no item de migrations.
-    //
-    // Alter automático é útil durante desenvolvimento, mas não
-    // deve ser tratado como substituto definitivo de migrations
-    // versionadas, principalmente agora que temos alterações
-    // sensíveis de foreign keys e auditoria.
+    // Durante desenvolvimento utilizamos alter: true para que
+    // alterações feitas nos models sejam refletidas no banco.
     //
     // Em produção:
     //
     // alter = false
+    //
+    // Antes da publicação definitiva, este comportamento será
+    // revisto junto com a estratégia de migrations.
     //
     // ========================================================
 

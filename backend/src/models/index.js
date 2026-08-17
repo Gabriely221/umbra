@@ -27,8 +27,6 @@
 //   ├── OrganizationAuditLog
 //   └── OrganizationNegotiation
 //
-// Rule
-//
 // ============================================================
 
 
@@ -90,10 +88,6 @@ const OrganizationHistory =
 
 const OrganizationAuditLog =
   require("./OrganizationAuditLog");
-
-
-const Rule =
-  require("./Rule");
 
 
 // ============================================================
@@ -650,7 +644,5 @@ module.exports = {
   OrganizationHistory,
 
   OrganizationAuditLog,
-
-  Rule,
 
 };

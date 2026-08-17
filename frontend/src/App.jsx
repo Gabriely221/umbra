@@ -105,9 +105,6 @@ import RelacoesExternas
 import OrganizationDetail
   from "@/pages/DetalheOrganizacao";
 
-import Rules
-  from "@/pages/Regras";
-
 import Administracao
   from "@/pages/Administracao";
 
@@ -490,34 +487,6 @@ export default function App() {
               element={
 
                 <LegacyOrganizationRedirect />
-
-              }
-
-            />
-
-
-            {/* ================================================
-                REGRAS
-                ================================================ */}
-
-            <Route
-
-              path="/regras"
-
-              element={
-
-                <ProtectedRoute
-
-                  anyPermissions={[
-                    "visualizar_regras",
-                    "gerenciar_regras",
-                  ]}
-
-                >
-
-                  <Rules />
-
-                </ProtectedRoute>
 
               }
 

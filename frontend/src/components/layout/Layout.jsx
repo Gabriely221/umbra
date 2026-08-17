@@ -131,13 +131,6 @@ export default function Layout() {
     ]);
 
 
-  const canViewRules =
-    canAny([
-      "visualizar_regras",
-      "gerenciar_regras",
-    ]);
-
-
   const canViewAdministration =
     canAny([
       "gerenciar_usuarios",
@@ -317,24 +310,6 @@ export default function Layout() {
                 }
               >
                 RELAÇÕES
-              </NavLink>
-
-            )}
-
-
-            {/* =================================================
-                REGRAS
-                ================================================= */}
-
-            {canViewRules && (
-
-              <NavLink
-                to="/regras"
-                className={
-                  getNavClass
-                }
-              >
-                REGRAS
               </NavLink>
 
             )}

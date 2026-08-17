@@ -6,6 +6,7 @@
 // módulos do sistema.
 //
 // Este componente NÃO acessa:
+//
 // - API
 // - Base44
 // - banco de dados
@@ -16,7 +17,8 @@
 //
 // ============================================================
 
-import React from "react";
+import React
+  from "react";
 
 
 // ============================================================
@@ -42,10 +44,9 @@ import {
 // ============================================================
 
 import {
-  Users,
-  ScrollText,
-  Image,
   ArrowRight,
+  Image,
+  Users,
 } from "lucide-react";
 
 
@@ -61,6 +62,7 @@ import {
 // path
 //
 // As permissões não são verificadas aqui.
+//
 // ============================================================
 
 const quickLinks = [
@@ -77,22 +79,6 @@ const quickLinks = [
 
     path:
       "/membros",
-
-  },
-
-
-  {
-    icon:
-      ScrollText,
-
-    title:
-      "REGRAS",
-
-    desc:
-      "As leis que mantêm a ordem e a disciplina dentro da família.",
-
-    path:
-      "/regras",
 
   },
 
@@ -135,15 +121,18 @@ export default function QuickLinksSection() {
         <motion.h2
 
           initial={{
-            opacity: 0,
+            opacity:
+              0,
           }}
 
           whileInView={{
-            opacity: 1,
+            opacity:
+              1,
           }}
 
           viewport={{
-            once: true,
+            once:
+              true,
           }}
 
           className="font-heading text-2xl font-bold tracking-[0.15em] text-center mb-12 text-primary"
@@ -159,7 +148,7 @@ export default function QuickLinksSection() {
             GRID
             ==================================================== */}
 
-        <div className="grid md:grid-cols-3 gap-6">
+        <div className="grid md:grid-cols-2 gap-6">
 
           {quickLinks.map(
             (
@@ -180,17 +169,24 @@ export default function QuickLinksSection() {
                   }
 
                   initial={{
-                    opacity: 0,
-                    y: 30,
+                    opacity:
+                      0,
+
+                    y:
+                      30,
                   }}
 
                   whileInView={{
-                    opacity: 1,
-                    y: 0,
+                    opacity:
+                      1,
+
+                    y:
+                      0,
                   }}
 
                   viewport={{
-                    once: true,
+                    once:
+                      true,
                   }}
 
                   transition={{
@@ -204,9 +200,10 @@ export default function QuickLinksSection() {
 
                 >
 
-                  {/* =========================================
+
+                  {/* ===========================================
                       LINK
-                      ========================================= */}
+                      =========================================== */}
 
                   <Link
 
@@ -219,20 +216,22 @@ export default function QuickLinksSection() {
                   >
 
 
-                    {/* =======================================
+                    {/* =========================================
                         ÍCONE
-                        ======================================= */}
+                        ========================================= */}
 
                     <Icon
 
                       className="w-8 h-8 text-muted-foreground group-hover:text-primary transition-colors mb-5"
 
+                      aria-hidden="true"
+
                     />
 
 
-                    {/* =======================================
+                    {/* =========================================
                         TÍTULO
-                        ======================================= */}
+                        ========================================= */}
 
                     <h3 className="font-heading text-lg font-semibold tracking-[0.1em] text-primary mb-3">
 
@@ -243,9 +242,9 @@ export default function QuickLinksSection() {
                     </h3>
 
 
-                    {/* =======================================
+                    {/* =========================================
                         DESCRIÇÃO
-                        ======================================= */}
+                        ========================================= */}
 
                     <p className="text-sm text-muted-foreground leading-relaxed mb-6 whitespace-pre-line">
 
@@ -256,9 +255,9 @@ export default function QuickLinksSection() {
                     </p>
 
 
-                    {/* =======================================
+                    {/* =========================================
                         ACESSAR
-                        ======================================= */}
+                        ========================================= */}
 
                     <span className="flex items-center gap-2 text-xs font-heading tracking-[0.15em] text-muted-foreground group-hover:text-primary transition-colors">
 
@@ -267,6 +266,8 @@ export default function QuickLinksSection() {
                       <ArrowRight
 
                         className="w-3 h-3 group-hover:translate-x-1 transition-transform"
+
+                        aria-hidden="true"
 
                       />
 

@@ -120,7 +120,6 @@ function normalizeBoolean(
 // Role.slug é utilizado como identificador persistente em:
 //
 // - Link.allowedRoles
-// - Rule.allowedRoles
 // - GalleryItem.allowedRoles
 // - Organization.allowedCargos
 //
@@ -981,7 +980,6 @@ async function criarRole(
 // Role.slug é persistido em:
 //
 // - Link.allowedRoles
-// - Rule.allowedRoles
 // - GalleryItem.allowedRoles
 // - Organization.allowedCargos
 //
